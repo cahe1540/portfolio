@@ -1,0 +1,1539 @@
+/*Globals*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  background: #ececec;
+}
+html {
+  scroll-behavior: smooth;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.text-blue {
+  color: rgb(8, 69, 182);
+}
+.text-white {
+  color: #fff;
+}
+
+.normalized-size {
+  width: 14rem;
+  height: 8.3rem;
+  border-radius: 6px;
+}
+.fade-in {
+  animation: slide-up-fade-in 0.6s ease-in forwards;
+}
+@keyframes slide-up-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+/*keyframes for mobile menu*/
+.mobile-open {
+  animation: slide-left 0.7s ease-in forwards;
+}
+
+.mobile-close {
+  animation: slide-right 0.7s ease-in forwards;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-207px);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-207px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.bg-black {
+  background: black;
+}
+
+#contact {
+  position: relative;
+  bottom: 10rem;
+}
+
+/*Nav Menu Section*/
+.menu {
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: rgb(3, 13, 31);
+  opacity: 100;
+  z-index: 4;
+}
+
+.hamburger-button {
+  width: 1.3rem;
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-menu {
+  background: rgb(196, 196, 196);
+  width: 13rem;
+  height: 53vh;
+  display: none;
+}
+
+.mobile-home a:hover,
+.mobile-about a:hover,
+.mobile-projects a:hover,
+.mobile-contact a:hover {
+  color: rgb(8, 69, 182);
+}
+
+#mobile-menu-items {
+  position: relative;
+  top: 0.8rem;
+  left: 2.5rem;
+}
+
+.mobile-menu-item {
+  margin-bottom: 1.8rem;
+}
+
+.mobile-menu a {
+  font-size: 1.4rem;
+}
+
+.close-btn {
+  position: relative;
+  left: 11rem;
+  cursor: pointer;
+}
+.fw-slash,
+.bw-slash {
+  height: 1rem;
+  width: 0.1rem;
+  background: red;
+}
+.fw-slash {
+  transform: rotate(45deg);
+  position: relative;
+  top: 1rem;
+}
+.bw-slash {
+  transform: rotate(-45deg);
+}
+
+hr {
+  width: 1.3rem;
+  height: 2px;
+  background: #fff;
+  margin-bottom: 0.3rem;
+  border: none;
+}
+
+#menu-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  left: 4.5rem;
+}
+
+.main-menu-item {
+  margin-right: 10rem;
+}
+
+.main-menu-item a {
+  opacity: 100%;
+  font-size: 1.4rem;
+  text-decoration-thickness: 15%;
+  margin-right: 1rem;
+  transition: 0.6s;
+}
+
+.main-menu-item a:hover {
+  color: rgb(8, 69, 182);
+}
+
+/*Hero Section*/
+.home {
+  height: 100vh;
+  background-image: url("background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(3, 13, 31);
+  opacity: 0.76;
+}
+
+.home > * {
+  z-index: 2;
+  position: relative;
+}
+.menu {
+  position: fixed;
+}
+.mobile-menu {
+  z-index: 5;
+}
+.home-info {
+  color: #fff;
+  position: relative;
+  top: 12rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.home-title {
+  font-size: 6.5rem;
+}
+
+.home-description {
+  font-size: 1.5rem;
+  position: relative;
+  top: 0.5rem;
+}
+
+.github,
+.leetcode {
+  position: relative;
+  left: 1rem;
+  top: 2.6rem;
+  color: #fff;
+  font-size: 2rem;
+  margin-right: 1rem;
+  transition: 0.6s;
+}
+
+.github:hover,
+.leetcode:hover {
+  color: rgb(29, 102, 238);
+}
+
+/*About*/
+.about {
+  height: 81vh;
+  opacity: 0;
+}
+
+.about-content {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.about-description {
+  margin-left: 8rem;
+  width: 55%;
+  line-height: 2rem;
+}
+
+.headers {
+  margin-top: 5rem;
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(8, 69, 182);
+}
+
+/*Projects*/
+.projects {
+  opacity: 0;
+}
+
+.work {
+  margin-top: 3rem;
+  margin-bottom: 10rem;
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  height: 12rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.project-name {
+  margin-bottom: 1rem;
+}
+
+.project-name a {
+  transition-duration: 0.4s;
+}
+
+.project-name a:hover {
+  color: rgb(47, 71, 116);
+}
+
+.project-description {
+  width: 62%;
+  margin-left: 5rem;
+  line-height: 1.5rem;
+}
+
+/*Contact me*/
+.contact {
+  height: 130vh;
+  margin-top: -3rem;
+  opacity: 0;
+}
+
+.mail,
+.phone,
+.marker {
+  color: rgb(8, 69, 182);
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 3rem;
+}
+
+.address {
+  width: 70%;
+}
+
+.contact-box {
+  text-align: center;
+}
+
+/*email form*/
+.email-form-container {
+  height: 86vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 1rem;
+  margin: auto;
+  margin-top: 3rem;
+  border-radius: 8px;
+}
+
+#email-form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.form-group {
+  width: 100%;
+}
+
+#email-form input {
+  width: 100%;
+  height: 2.2rem;
+  border-radius: 0.75rem;
+  outline: none;
+  border: 1px grey solid;
+  text-indent: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#email-form textarea {
+  width: 100%;
+  resize: vertical;
+  border-radius: 0.75rem;
+  height: 12rem;
+  border-radius: 1.4rem;
+  outline: none;
+  border: 1px grey solid;
+  text-indent: 1rem;
+}
+
+#email-form textarea:focus,
+#email-form input:focus {
+  border: 1px rgb(8, 69, 182) solid;
+}
+
+#email-form button {
+  margin-top: 1rem;
+  width: 9rem;
+  height: 3rem;
+  border-radius: 5px;
+  background-color: rgb(8, 69, 182);
+  color: #fff;
+  border: none;
+  font-size: 1.1rem;
+}
+
+#email-form button:hover {
+  background-color: rgb(4, 20, 49);
+}
+
+/*footer*/
+footer {
+  height: 22vh;
+  background: rgb(3, 13, 31);
+}
+
+#footer-info {
+  color: #fff;
+  text-align: center;
+  position: relative;
+  top: 2.4rem;
+}
+
+.current {
+  color: rgb(29, 102, 238);
+}
+
+/*Media Queries*/
+
+/*Galaxy fold*/
+@media only screen and (max-width: 280px) {
+  /*globals*/
+  .headers {
+    font-size: 2rem;
+  }
+
+  /*hero section*/
+  .menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    left: 100%;
+  }
+  .hamburger-button {
+    display: block;
+    position: fixed;
+    left: 85%;
+    top: 1.8rem;
+    z-index: 4;
+  }
+  .home {
+    height: 80vh;
+  }
+  .home::after {
+    height: 80vh;
+  }
+  .home-info {
+    top: 10rem;
+  }
+  .home-title {
+    font-size: 3rem;
+  }
+  .home-description {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+  .leetcode,
+  .github {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    position: relative;
+  }
+  /*About*/
+  .about {
+    height: 53vh;
+  }
+  .about img {
+    display: none;
+  }
+  .about-content {
+    display: block;
+    width: 75%;
+    text-align: center;
+    position: relative;
+    right: 9.2rem;
+    bottom: 3rem;
+  }
+  .about-description {
+    width: 15rem;
+    line-height: 1.8rem;
+  }
+  /*my work*/
+  .normalized-size {
+    width: 15rem;
+    height: 11rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .project-item {
+    width: 15rem;
+    height: 33rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+    position: relative;
+    right: 0.5rem;
+  }
+  .project-description h3 {
+    font-size: 1.1rem;
+    width: 13.8rem;
+    position: relative;
+    right: 4rem;
+    top: 2.5rem;
+  }
+  .project-description p {
+    line-height: 1.35rem;
+    width: 13.8rem;
+    font-size: 0.9rem;
+    position: relative;
+    right: 4rem;
+    top: 2.4rem;
+    text-align: left;
+  }
+
+  /*contact*/
+  .contact {
+    height: 155vh;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3rem;
+    align-items: center;
+  }
+
+  .contact-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .email-form-container {
+    width: 100%;
+    height: 32rem;
+    position: relative;
+    bottom: 2rem;
+  }
+
+  #email-form button {
+    width: 8.1rem;
+    height: 2rem;
+    position: relative;
+    left: 5.6rem;
+  }
+
+  #email-form textarea {
+    height: 5rem;
+  }
+
+  footer {
+    height: 45vh;
+  }
+}
+
+/*iphone 5 SE*/
+@media only screen and (min-width: 281px) and (max-width: 320px) {
+  /*globals*/
+  .headers {
+    font-size: 2rem;
+  }
+
+  /*hero section*/
+  .menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    left: 100%;
+  }
+  .hamburger-button {
+    display: block;
+    position: fixed;
+    left: 85%;
+    top: 1.8rem;
+    z-index: 4;
+  }
+  .home {
+    height: 80vh;
+  }
+  .home::after {
+    height: 80vh;
+  }
+  .home-info {
+    top: 10rem;
+  }
+  .home-title {
+    font-size: 3rem;
+  }
+  .home-description {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+  .leetcode,
+  .github {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    position: relative;
+  }
+  /*About*/
+  .about {
+    height: 53vh;
+  }
+  .about img {
+    display: none;
+  }
+  .about-content {
+    display: block;
+    width: 75%;
+    text-align: center;
+    position: relative;
+    right: 9.2rem;
+    bottom: 3rem;
+  }
+  .about-description {
+    width: 18rem;
+    line-height: 1.8rem;
+  }
+  /*my work*/
+  .normalized-size {
+    width: 16.3rem;
+    height: 14rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .project-item {
+    width: 16.3rem;
+    height: 37rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+    position: relative;
+    right: 0.5rem;
+  }
+  .project-description h3 {
+    font-size: 1.1rem;
+    width: 13.8rem;
+    position: relative;
+    right: 4rem;
+    top: 2.5rem;
+  }
+  .project-description p {
+    line-height: 1.35rem;
+    width: 13.8rem;
+    font-size: 0.9rem;
+    position: relative;
+    right: 4rem;
+    top: 2.4rem;
+    text-align: left;
+  }
+
+  /*contact*/
+  .contact {
+    height: 155vh;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3rem;
+    align-items: center;
+  }
+
+  .contact-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .email-form-container {
+    width: 100%;
+    height: 32rem;
+    position: relative;
+    bottom: 2rem;
+  }
+
+  #email-form button {
+    width: 8.1rem;
+    height: 2rem;
+    position: relative;
+    left: 5.6rem;
+  }
+
+  #email-form textarea {
+    height: 5rem;
+  }
+
+  footer {
+    height: 45vh;
+  }
+}
+
+/* small screens (iphone 5) sized*/
+@media only screen and (min-width: 321px) and (max-width: 359px) {
+  /*globals*/
+  .headers {
+    font-size: 2rem;
+  }
+
+  /*hero section*/
+  .menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    left: 100%;
+  }
+  .hamburger-button {
+    display: block;
+    position: fixed;
+    left: 85%;
+    top: 1.8rem;
+    z-index: 4;
+  }
+  .home {
+    height: 80vh;
+  }
+  .home::after {
+    height: 80vh;
+  }
+  .home-info {
+    top: 10rem;
+  }
+  .home-title {
+    font-size: 3.4rem;
+  }
+  .home-description {
+    font-size: 0.9rem;
+  }
+  .leetcode,
+  .github {
+    font-size: 1.5rem;
+    position: relative;
+  }
+  /*About*/
+  .about {
+    height: 53vh;
+  }
+  .about img {
+    display: none;
+  }
+  .about-content {
+    display: block;
+    width: 75%;
+    text-align: center;
+    position: relative;
+    right: 9.2rem;
+    bottom: 3rem;
+  }
+  .about-description {
+    width: 20rem;
+    line-height: 1.8rem;
+  }
+  /*my work*/
+  .normalized-size {
+    width: 19rem;
+    height: 14rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .project-item {
+    width: 19rem;
+    height: 33.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+    position: relative;
+    right: 0.5rem;
+  }
+  .project-description h3 {
+    font-size: 1.3rem;
+    width: 17rem;
+    position: relative;
+    right: 4rem;
+    top: 2.5rem;
+  }
+  .project-description p {
+    line-height: 1.35rem;
+    width: 17rem;
+    font-size: 0.95rem;
+    position: relative;
+    right: 4rem;
+    top: 2.4rem;
+    text-align: left;
+  }
+
+  /*contact*/
+  .contact {
+    height: 145vh;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3rem;
+    align-items: center;
+  }
+
+  .contact-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .email-form-container {
+    width: 100%;
+    height: 32rem;
+    position: relative;
+    bottom: 2rem;
+  }
+
+  #email-form button {
+    width: 8.1rem;
+    height: 2rem;
+    position: relative;
+    left: 5.6rem;
+  }
+
+  #email-form textarea {
+    height: 5rem;
+  }
+
+  footer {
+    height: 40vh;
+  }
+}
+
+/* Extra small devices (samsung galaxy s5 size) */
+@media only screen and (min-width: 360px) and (max-width: 450px) {
+  /*globals*/
+  .headers {
+    font-size: 2rem;
+  }
+
+  /*hero section*/
+  .menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    left: 100%;
+  }
+  .hamburger-button {
+    display: block;
+    position: fixed;
+    left: 86%;
+    top: 1.8rem;
+    z-index: 4;
+  }
+  .home {
+    height: 80vh;
+  }
+  .home::after {
+    height: 80vh;
+  }
+  .home-info {
+    top: 10rem;
+  }
+  .home-title {
+    font-size: 3.2rem;
+  }
+  .home-description {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    width: 80%;
+    text-align: center;
+    left: 2.7rem;
+  }
+  .leetcode,
+  .github {
+    font-size: 1.5rem;
+    position: relative;
+    margin-top: 0.5rem;
+    left: 0.2rem;
+  }
+  /*About*/
+  .about {
+    height: 75vh;
+  }
+  .about img {
+    display: none;
+  }
+  .about-content {
+    display: block;
+    text-align: center;
+    position: relative;
+    right: 8.5rem;
+    bottom: 3rem;
+  }
+  .about-description {
+    width: 19rem;
+    line-height: 1.8rem;
+  }
+  /*my work*/
+  .normalized-size {
+    width: 18rem;
+    height: 14rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .work {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project-item {
+    width: 18rem;
+    height: 35rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+  }
+  .project-description h3 {
+    font-size: 1.1rem;
+    width: 16rem;
+    position: relative;
+    right: 4rem;
+    top: 2.5rem;
+  }
+  .project-description p {
+    line-height: 1.35rem;
+    width: 16rem;
+    font-size: 0.9rem;
+    position: relative;
+    right: 4rem;
+    top: 2.4rem;
+    text-align: left;
+  }
+
+  /*contact*/
+  .contact {
+    height: 155vh;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3rem;
+    align-items: center;
+  }
+
+  .contact-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .email-form-container {
+    width: 100%;
+    height: 32rem;
+    position: relative;
+    bottom: 2rem;
+  }
+
+  #email-form button {
+    width: 8.6rem;
+    height: 2.2rem;
+    position: relative;
+    top: 0.5rem;
+    left: 5.6rem;
+  }
+
+  #email-form textarea {
+    height: 5rem;
+  }
+
+  footer {
+    height: 40vh;
+  }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 599px) {
+  /*globals*/
+  .headers {
+    font-size: 2rem;
+  }
+
+  /*hero section*/
+  .menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    left: 100%;
+  }
+  .hamburger-button {
+    display: block;
+    position: fixed;
+    left: 86%;
+    top: 1.8rem;
+    z-index: 4;
+  }
+  .home {
+    height: 80vh;
+  }
+  .home::after {
+    height: 80vh;
+  }
+  .home-info {
+    top: 10rem;
+  }
+  .home-title {
+    font-size: 4.1rem;
+  }
+  .home-description {
+    font-size: 1.1rem;
+  }
+  .leetcode,
+  .github {
+    font-size: 1.5rem;
+    position: relative;
+  }
+  /*About*/
+  .about {
+    height: 75vh;
+  }
+  .about img {
+    display: none;
+  }
+  .about-content {
+    display: block;
+    text-align: center;
+    position: relative;
+    right: 5rem;
+    bottom: 3rem;
+  }
+  .about-description {
+    width: 19rem;
+    line-height: 1.8rem;
+  }
+  /*my work*/
+  .normalized-size {
+    width: 18rem;
+    height: 14rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .work {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project-item {
+    width: 18rem;
+    height: 35rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+  }
+  .project-description h3 {
+    font-size: 1.1rem;
+    width: 16rem;
+    position: relative;
+    right: 4rem;
+    top: 2.5rem;
+  }
+  .project-description p {
+    line-height: 1.35rem;
+    width: 16rem;
+    font-size: 0.9rem;
+    position: relative;
+    right: 4rem;
+    top: 2.4rem;
+    text-align: left;
+  }
+
+  /*contact*/
+  .contact {
+    height: 155vh;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3rem;
+    align-items: center;
+  }
+
+  .contact-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .email-form-container {
+    width: 100%;
+    height: 32rem;
+    position: relative;
+    bottom: 2rem;
+  }
+
+  #email-form button {
+    width: 8.6rem;
+    height: 2.2rem;
+    position: relative;
+    top: 0.5rem;
+    left: 5.6rem;
+  }
+
+  #email-form textarea {
+    height: 5rem;
+  }
+
+  footer {
+    height: 40vh;
+  }
+}
+/* (portrait tablets and large phones, 600-1000px) */
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+  /*globals*/
+  .headers {
+    font-size: 3rem;
+  }
+
+  /*hero section*/
+  .menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    left: 100%;
+  }
+  .hamburger-button {
+    display: block;
+    position: fixed;
+    left: 92%;
+    top: 1.8rem;
+    z-index: 4;
+  }
+  .home {
+    height: 100vh;
+  }
+  .home::after {
+    height: 100vh;
+  }
+  .home-info {
+    top: 10rem;
+  }
+  .home-title {
+    font-size: 5rem;
+  }
+  .home-description {
+    font-size: 1.1rem;
+  }
+  .leetcode,
+  .github {
+    font-size: 1.7rem;
+    position: relative;
+  }
+  /*About*/
+  .about {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .about img {
+    display: none;
+  }
+  .about-content {
+    display: block;
+    width: 120%;
+    text-align: center;
+    position: relative;
+    right: 4rem;
+    bottom: 3rem;
+  }
+  .about-description {
+    width: 80%;
+    line-height: 1.8rem;
+  }
+  /*my work*/
+  .work {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+  }
+
+  .normalized-size {
+    width: 18rem;
+    height: 14rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .project-item {
+    width: 18rem;
+    height: 33.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .project-description h3 {
+    font-size: 1.3rem;
+    width: 16.5rem;
+    position: relative;
+    right: 4rem;
+    top: 2.5rem;
+  }
+  .project-description p {
+    line-height: 1.35rem;
+    width: 16.5rem;
+    font-size: 0.95rem;
+    position: relative;
+    right: 4rem;
+    top: 2.4rem;
+    text-align: left;
+  }
+
+  /*contact*/
+  .contact {
+    height: 155vh;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3rem;
+    align-items: center;
+  }
+
+  .contact-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .email-form-container {
+    width: 100%;
+    height: 35rem;
+    position: relative;
+    bottom: 2rem;
+  }
+
+  #email-form button {
+    width: 8.6rem;
+    height: 2.2rem;
+    position: relative;
+    top: 0.5rem;
+    left: 5.6rem;
+  }
+
+  footer {
+    height: 9rem;
+  }
+  /*toggle current on menu*/
+  .current {
+    color: rgb(8, 69, 182);
+  }
+}
+
+/* I-Pad Pro 1000-1199px */
+@media only screen and (min-width: 801px) and (max-width: 1199px) {
+  /*globals*/
+  .headers {
+    font-size: 3rem;
+  }
+
+  /*hero section*/
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    left: 100%;
+  }
+  .hamburger-button {
+    display: none;
+    position: fixed;
+    left: 92%;
+    top: 1.8rem;
+    z-index: 4;
+  }
+  .home {
+    height: 100vh;
+  }
+  .home::after {
+    height: 100vh;
+  }
+  .home-info {
+    top: 10rem;
+  }
+  .home-title {
+    font-size: 5rem;
+  }
+  .home-description {
+    font-size: 1.1rem;
+  }
+  .leetcode,
+  .github {
+    font-size: 1.7rem;
+    position: relative;
+  }
+  /*About*/
+  .about {
+    height: 100vh;
+  }
+  .about img {
+    display: block;
+    width: 25rem;
+  }
+  .about-content {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    position: relative;
+  }
+  .about-description {
+    width: 80%;
+    line-height: 1.8rem;
+  }
+  /*my work*/
+  .work {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+
+  .normalized-size {
+    width: 24rem;
+    height: 14rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .project-item {
+    width: 24rem;
+    height: 33.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .project-description h3 {
+    font-size: 1.3rem;
+    width: 21rem;
+    position: relative;
+    right: 4rem;
+    top: 2.5rem;
+  }
+  .project-description p {
+    line-height: 1.35rem;
+    width: 21rem;
+    font-size: 0.95rem;
+    position: relative;
+    right: 4rem;
+    top: 2.4rem;
+    text-align: left;
+  }
+
+  /*contact*/
+  .contact {
+    height: 155vh;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3rem;
+    align-items: center;
+  }
+
+  .contact-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .email-form-container {
+    width: 100%;
+    height: 35rem;
+    position: relative;
+    bottom: 2rem;
+  }
+
+  #email-form button {
+    width: 8.6rem;
+    height: 2.2rem;
+    position: relative;
+    top: 0.5rem;
+  }
+
+  footer {
+    height: 15rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1700px) {
+  .menu {
+    height: 6rem;
+  }
+  .main-menu-item a {
+    font-size: 2.5rem;
+  }
+  .home-info {
+    position: relative;
+    top: 17rem;
+  }
+  .home-title {
+    font-size: 7.5rem;
+  }
+  .home-description {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+  }
+  .github,
+  .leetcode {
+    margin-top: 1.5rem;
+    font-size: 2.4rem;
+  }
+  .headers {
+    font-size: 4rem;
+  }
+  .about-description {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+  .about img {
+    width: 45rem;
+  }
+
+  .normalized-size {
+    width: 18rem;
+    height: 11rem;
+  }
+
+  .project-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    height: 18rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .project-name {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+  .project-description p {
+    font-size: 1.3rem;
+    line-height: 2.1rem;
+  }
+  .text-blue,
+  .phone,
+  .mail,
+  .marker {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-group label {
+    font-size: 1.5rem;
+  }
+  #email-form input {
+    width: 100%;
+    height: 3.2rem;
+    border-radius: 1rem;
+    outline: none;
+    border: 1px grey solid;
+    text-indent: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+  #email-form button {
+    height: 3.5rem;
+    width: 11rem;
+    font-size: 1.3rem;
+  }
+
+  #footer-info {
+    font-size: 1.5rem;
+  }
+}

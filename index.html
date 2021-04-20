@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href= "style.css">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+	<title></title>
+</head>
+<body>
+    <div class="hamburger-button">
+        <hr class = "burger-dashes" />
+        <hr class = "burger-dashes" />
+        <hr class = "burger-dashes" />
+    </div>
+    <div class="mobile-menu">
+        <div class = "close-btn">
+            <div class="fw-slash"></div>
+            <div class="bw-slash"></div>
+        </div>
+        <ul id="mobile-menu-items">
+            <li class= "mobile-menu-item mobile-home"><a href="#home" class="home-btn current">Home</a></li>
+            <li class= "mobile-menu-item mobile-about"><a href="#about" class="about-btn">About</a></li>
+            <li class= "mobile-menu-item mobile-projects"><a href="#projects" class="projects-btn">Projects</a></li>
+            <li class= "mobile-menu-item mobile-contact"><a href="#contact" class="contact-btn">Contact</a></li>
+        </ul>
+    </div>
+    <section class="home" id = "home">
+        <div class="menu">
+            <ul id="menu-items">
+                <li class= "main-menu-item menu-home"><a href="#home" class="home-btn text-white current">Home</a></li>
+                <li class= "main-menu-item menu-about"><a href="#about" class="about-btn text-white">About</a></li>
+                <li class= "main-menu-item menu-projects"><a href="#projects" class="projects-btn text-white">Projects</a></li>
+                <li class= "main-menu-item menu-contact"><a href="#contact" class="contact-btn text-white">Contact</a></li>
+            </ul>
+        </div>
+        <div class = 'home-info'>
+            <p class = "home-title">Carlos Herrera</p>
+            <p class = "home-description">Web Developer, Programmer, Software Engineer</p>
+            <div class = "social">
+                <a href="https://leetcode.com/cherrera7/"><span class="iconify leetcode" data-icon="simple-icons:leetcode" data-inline="false"></span></a></li>
+                <a href="https://github.com/cahe1540"><span class="iconify github" data-icon="akar-icons:github-fill" data-inline="false"></span></a></li>
+            </div>
+        </div>
+    </section>
+    <div id=about></div>
+    <div class= "container">
+        <section class="about">
+            <p class = "headers">About Me</p>
+            <div class="about-content">
+                <img src="temp2.jpg">
+                <p class = "about-description">I graduated from California State University of Bakersfield in June of 2020 with a B.S. in Computer Engineering. I began to take interest in web development near the end of my program. Since graduating, I've learned HTML, CSS, and Javascript using online resources. I am familiar with backend programming with Node.js and front end programming with React.</p>
+            </div>
+        </section>
+        <div id=projects></div>
+        <section class="projects">
+            <p class="headers">My Work</p>
+            <div class="work">
+                <!-- <div class="project-item">
+                    <img src="./img/projects/conquer.JPG" class="normalized-size">
+                    <div class="project-description">
+                        <h3 class= "project-name text-blue"><strong>The Plant Store (In progress)</strong></h3>
+                        <p>
+                            This is an online store that I'm currently working on. The front end will 
+                            be ran using <strong>React</strong> and the backend will use <strong>Node.js</strong>. The database will be <strong>MongoDB</strong> 
+                            and routing will be done using <strong>Express.js</strong>. Payments will be made using <strong>Stripe</strong>.  
+                        </p>
+                    </div> -->
+                <div class="project-item">
+                    <img src="./img/projects/natours.JPG" class="image-1 normalized-size">
+                    <div class="project-description">
+                        <h3 class= "project-name text-blue"><strong>Natours</strong></h3>
+                        <p> 
+                            This is a project from Jonas Schmid's full stack bootcamp course on Udemy. This project
+                            is a full stack app built using <strong>Node.js</strong>, <strong>Express</strong>,
+                            <strong>MongoDB</strong>, and <strong>Pug Templates</strong>. View the source code on <a href="https://github.com/cahe1540/natours" class="text-blue">github.</a>
+                        </p>
+                    </div>
+                </div>     
+                <div class="project-item">
+                    <a href="https://punk-beer.netlify.app/"><img src="./img/projects/punkbeer.JPG" class="image-2 normalized-size"></a>
+                    <div class="project-description">
+                        <h3 class= "project-name text-blue"><a href="https://punk-beer.netlify.app/" class="text-blue">React Search UI</a></h3>
+                        <p>
+                            This project is a search UI for the Punk Beer API. It allows a user to search data by name
+                            from the API and displays the results as cards. The user can store favorites and can navigate away
+                            and return to the website and recover their favorites. This app is made using <strong>React</strong>, <strong>HTML</strong>, and <strong>CSS</strong>. 
+                            View the source code on <a href="https://github.com/cahe1540/punk-beer" class="text-blue">github.</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <a href="https://cahe1540.github.io/leaderboard_AOE2-DE/"><img src="./img/projects/leaderboardProject.JPG" class="image-4 normalized-size"></a>
+                    <div class="project-description">
+                        <h3 class= "project-name text-blue"><a href="https://cahe1540.github.io/leaderboard_AOE2-DE/" class="text-blue">Age of Empires II Leaderboard App</a></h3>
+                        <p>
+                            This is a leaderboard app for the video game, Age of Empires II DE. This project was made 
+                            using <strong>Javascript</strong>, <strong>HTML</strong> and <strong>CSS</strong>. The app works by
+                            submitting a <strong>fetch</strong> request to an open source Age of Empires II API. Data is consumed and 
+                            rendered to a UI. View the source code on <a href="https://github.com/cahe1540/leaderboard_AOE2-DE" class="text-blue">github</a>. 
+                        </p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <a href="https://cahe1540.github.io/poker_game/"><img src="./img/projects/poker_game.JPG" class="image-5 normalized-size"></a>
+                    <div class="project-description">
+                        <h3 class= "project-name text-blue"><a href="https://cahe1540.github.io/poker_game/" class="text-blue">Vanilla JS Poker Game</a></h3>
+                        <p> 
+                            This was my first web project ever. It's made using vanilla <strong>Javascript</strong>, <strong>HTML</strong> and <strong>CSS</strong> only. Coming from a C++ background, 
+                            this app was designed using an <strong>object oriented</strong> design. View the source code on <a href="https://github.com/cahe1540/poker_game" class="text-blue">github</a>. 
+                        </p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <a href="https://cahe1540.github.io/conquer-replica/"><img src="./img/projects/conquer.JPG" class="image-3 normalized-size"></a>
+                     <div class="project-description">
+                         <h3 class= "project-name text-blue"><a href="https://cahe1540.github.io/conquer-replica/" class="text-blue">Vanilla JS Conquer Replica</a></h3>
+                         <p> 
+                             This project is a replica of the Boostrap Conquer theme. I made this project to practice my abilities to replicate a design using 
+                             <strong>Javascript</strong>, <strong>HTML</strong> and <strong>CSS</strong>. I specifically wanted to practice my abilites to make 
+                             my pages <strong>responsive</strong> using <strong>media queries</strong>. After completing this project, I made all my previous projects
+                             responsive as well. View the source code on <a href="https://cahe1540.github.io/conquer-replica/" class="text-blue">github</a>.
+                         </p>
+                     </div>
+                 </div>
+            </div>
+        </section>
+        <div id=contact></div> 
+        <section class="contact">
+            <p class="headers ">Contact Me</p>
+            <div class="contact-info">
+                <div class="contact-box address">
+                    <span class="iconify marker" data-icon="majesticons:location-marker" data-inline="false"></span>
+                    <p class="text-blue">Address: 14507 Rayen St. Panorama City CA 91402</p>
+                </div>
+                <div class="contact-box">
+                    <span class="iconify mail" data-icon="ant-design:mail-filled" data-inline="false"></span>
+                    <p class="text-blue">Email: cahe1540@gmail.com</p>
+                </div>
+                <div class="contact-box">
+                    <span class="iconify phone" data-icon="bi:telephone-fill" data-inline="false"></span>
+                    <P class="text-blue">Phone: (818)-922-5046</p>
+                </div>
+            </div>
+            <div class = 'email-form-container'>
+                <form id= "email-form" action = "" onclick= "">
+                    <div class= "form-group">
+                        <label for = 'name'>Name</label>
+                        <input type= 'text' id= 'name' name='name'/>    
+                    </div>
+                    <div class= "form-group">
+                        <label for= 'email'>Email</label>
+                        <input type= 'text' id = 'email' name='email'/>
+                    </div>
+                    <div class= "form-group">
+                        <label for = ''subject>Subject</label>
+                        <input type= 'text' id = 'subject' name= 'subject'/>
+                    </div>
+                    <div class= "form-group">
+                        <label for = 'message'>Message</label>
+                        <textarea id = 'message' name= 'message'></textarea>
+                    </div>
+                    <button>Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <footer>  
+        <p id="footer-info">Copyright © 2021 All Rights Reserved</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
