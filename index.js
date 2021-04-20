@@ -25,7 +25,7 @@ const mobileContact = document.querySelector('.mobile-contact');
 let homeStart, aboutStart, projectStart, contactStart;
 
 //correction of 150 pxs of above values
-let offset = 175;
+let offset = 165;
 
 //update breakpoints for scrolling and fading
 function calcBreakPoints(){ 
@@ -46,7 +46,6 @@ function removeBlueFontFromMenuItems(){
 //add blue font to menu item depending on current position on page
 function updateBlueFont(elmnts){
     elmnts.forEach(cur => cur.classList.add('current'));
-    console.log(elmnts);
 }
 
 //set default breakpoint dimensions
@@ -57,6 +56,9 @@ window.addEventListener('resize', calcBreakPoints);
 
 //add fade in animation to each section
 window.addEventListener('scroll', () => {
+    /* console.log(window.pageYOffset);
+    console.log(homeStart, aboutStart, projectStart, contactStart);
+ */
     //change color of hamburger button
     if(window.pageYOffset > aboutStart){
         document.querySelectorAll('.burger-dashes').forEach(el => {
@@ -70,30 +72,39 @@ window.addEventListener('scroll', () => {
 
     //reset all animations
     if(window.pageYOffset < 150){
-        removeBlueFontFromMenuItems();
-        updateBlueFont(document.querySelectorAll('.home-btn'));
         about.classList.remove('fade-in');
         projects.classList.remove('fade-in');
         contact.classList.remove('fade-in');
     }
-
     //add fade in animation to about 
     if(window.pageYOffset >= aboutStart-offset && window.pageYOffset < projectStart-offset){
-        removeBlueFontFromMenuItems();
-        updateBlueFont(document.querySelectorAll('.about-btn'));
         about.classList.add('fade-in');
     }
     //add fade in animation to about 
     if(window.pageYOffset >= projectStart-offset && window.pageYOffset < contactStart-offset){
-        removeBlueFontFromMenuItems();
-        updateBlueFont(document.querySelectorAll('.projects-btn'));
         projects.classList.add('fade-in');
     }
     //add fade in animation to about 
     if(window.pageYOffset > contactStart-offset){
+        contact.classList.add('fade-in');
+    }
+
+    /*change highlighted btn*/
+    if(window.pageYOffset <= aboutStart){
+        removeBlueFontFromMenuItems();
+        updateBlueFont(document.querySelectorAll('.home-btn'));
+    }
+    if(window.pageYOffset > aboutStart-20 && window.pageYOffset <= projectStart){
+        removeBlueFontFromMenuItems();
+        updateBlueFont(document.querySelectorAll('.about-btn'));
+    }
+    if(window.pageYOffset > projectStart-20 && window.pageYOffset <= contactStart){
+        removeBlueFontFromMenuItems();
+        updateBlueFont(document.querySelectorAll('.projects-btn'));
+    }
+    if(window.pageYOffset > contactStart-30){
         removeBlueFontFromMenuItems();
         updateBlueFont(document.querySelectorAll('.contact-btn'));
-        contact.classList.add('fade-in');
     }
 });
 

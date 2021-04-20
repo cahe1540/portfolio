@@ -108,6 +108,12 @@ a {
   display: none;
 }
 
+.burger-dashes {
+  width: 1.85rem;
+  height: 0.2rem;
+  margin-bottom: 0.3rem;
+}
+
 .mobile-menu {
   background: rgb(196, 196, 196);
   width: 13rem;
@@ -234,14 +240,14 @@ hr {
 .home-description {
   font-size: 1.5rem;
   position: relative;
-  top: 0.5rem;
+  top: 1rem;
 }
 
 .github,
 .leetcode {
   position: relative;
   left: 1rem;
-  top: 2.6rem;
+  top: 11.5rem;
   color: #fff;
   font-size: 2rem;
   margin-right: 1rem;
@@ -453,10 +459,10 @@ footer {
     z-index: 4;
   }
   .home {
-    height: 80vh;
+    height: 100vh;
   }
   .home::after {
-    height: 80vh;
+    height: 100vh;
   }
   .home-info {
     top: 10rem;
@@ -476,7 +482,7 @@ footer {
   }
   /*About*/
   .about {
-    height: 53vh;
+    height: 60vh;
   }
   .about img {
     display: none;
@@ -557,10 +563,11 @@ footer {
   }
 
   #email-form button {
-    width: 8.1rem;
+    width: 8rem;
     height: 2rem;
+    font-size: 0.8;
     position: relative;
-    left: 5.6rem;
+    left: 1rem;
   }
 
   #email-form textarea {
@@ -596,26 +603,29 @@ footer {
     z-index: 4;
   }
   .home {
-    height: 80vh;
+    height: 100vh;
   }
   .home::after {
-    height: 80vh;
+    height: 100vh;
   }
   .home-info {
     top: 10rem;
   }
   .home-title {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
   .home-description {
     margin-top: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    position: relative;
+    top: 2rem;
   }
   .leetcode,
   .github {
     margin-top: 1rem;
     font-size: 1.5rem;
     position: relative;
+    top: 12.5rem;
   }
   /*About*/
   .about {
@@ -694,20 +704,26 @@ footer {
 
   .email-form-container {
     width: 100%;
-    height: 32rem;
+    height: 29rem;
     position: relative;
     bottom: 2rem;
   }
 
+  #email-form {
+    position: relative;
+    bottom: 0.5rem;
+  }
+
   #email-form button {
     width: 8.1rem;
-    height: 2rem;
+    height: 2.5rem;
     position: relative;
-    left: 5.6rem;
+    left: 0;
+    top: 1.5rem;
   }
 
   #email-form textarea {
-    height: 5rem;
+    height: 4rem;
   }
 
   footer {
@@ -739,10 +755,10 @@ footer {
     z-index: 4;
   }
   .home {
-    height: 80vh;
+    height: 100vh;
   }
   .home::after {
-    height: 80vh;
+    height: 100vh;
   }
   .home-info {
     top: 10rem;
@@ -880,10 +896,10 @@ footer {
     z-index: 4;
   }
   .home {
-    height: 80vh;
+    height: 100vh;
   }
   .home::after {
-    height: 80vh;
+    height: 100vh;
   }
   .home-info {
     top: 10rem;
@@ -893,7 +909,7 @@ footer {
   }
   .home-description {
     font-size: 1.1rem;
-    margin-top: 0.5rem;
+    margin-top: 2.5rem;
     width: 80%;
     text-align: center;
     left: 2.7rem;
@@ -902,12 +918,12 @@ footer {
   .github {
     font-size: 1.5rem;
     position: relative;
-    margin-top: 0.5rem;
-    left: 0.2rem;
+    top: 17.5rem;
+    left: 0.5rem;
   }
   /*About*/
   .about {
-    height: 75vh;
+    height: 65vh;
   }
   .about img {
     display: none;
@@ -1183,19 +1199,15 @@ footer {
   .home::after {
     height: 100vh;
   }
-  .home-info {
-    top: 10rem;
-  }
   .home-title {
-    font-size: 5rem;
+    font-size: 6rem;
   }
   .home-description {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
   .leetcode,
   .github {
-    font-size: 1.7rem;
-    position: relative;
+    font-size: 2.4rem;
   }
   /*About*/
   .about {
@@ -1222,10 +1234,6 @@ footer {
   }
   /*my work*/
   .work {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5rem;
@@ -1338,27 +1346,23 @@ footer {
   .home::after {
     height: 100vh;
   }
-  .home-info {
-    top: 10rem;
-  }
   .home-title {
-    font-size: 5rem;
+    font-size: 6rem;
   }
   .home-description {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
   .leetcode,
   .github {
-    font-size: 1.7rem;
-    position: relative;
+    font-size: 2.4rem;
   }
   /*About*/
   .about {
-    height: 100vh;
+    height: 80vh;
   }
   .about img {
     display: block;
-    width: 25rem;
+    width: 30rem;
   }
   .about-content {
     display: flex;
@@ -1369,42 +1373,6 @@ footer {
   .about-description {
     width: 80%;
     line-height: 1.8rem;
-  }
-  /*my work*/
-  .work {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-  }
-
-  .normalized-size {
-    width: 24rem;
-    height: 14rem;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-  .project-item {
-    width: 24rem;
-    height: 33.4rem;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-  .project-description h3 {
-    font-size: 1.3rem;
-    width: 21rem;
-    position: relative;
-    right: 4rem;
-    top: 2.5rem;
-  }
-  .project-description p {
-    line-height: 1.35rem;
-    width: 21rem;
-    font-size: 0.95rem;
-    position: relative;
-    right: 4rem;
-    top: 2.4rem;
-    text-align: left;
   }
 
   /*contact*/
