@@ -1069,7 +1069,7 @@ footer {
   }
   /*About*/
   .about {
-    height: 75vh;
+    height: 100vh;
   }
   .about img {
     display: none;
@@ -1171,7 +1171,7 @@ footer {
   }
 }
 /* (portrait tablets and large phones, 600-1000px) */
-@media only screen and (min-width: 600px) and (max-width: 800px) {
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
   /*globals*/
   .headers {
     font-size: 3rem;
@@ -1316,7 +1316,7 @@ footer {
 }
 
 /* I-Pad Pro 1000-1199px */
-@media only screen and (min-width: 801px) and (max-width: 1199px) {
+@media only screen and (min-width: 1000px) and (max-width: 1199px) {
   /*globals*/
   .headers {
     font-size: 3rem;

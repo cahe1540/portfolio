@@ -56,9 +56,7 @@ window.addEventListener('resize', calcBreakPoints);
 
 //add fade in animation to each section
 window.addEventListener('scroll', () => {
-    /* console.log(window.pageYOffset);
-    console.log(homeStart, aboutStart, projectStart, contactStart);
- */
+    console.log(window.innerWidth);
     //change color of hamburger button
     if(window.pageYOffset > aboutStart){
         document.querySelectorAll('.burger-dashes').forEach(el => {
