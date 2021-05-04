@@ -90,6 +90,15 @@ a {
   bottom: 10rem;
 }
 
+.success {
+  color: green;
+  font-weight: bold;
+}
+.fail {
+  color: Red;
+  font-weight: bold;
+}
+
 /*Nav Menu Section*/
 .menu {
   height: 4rem;
@@ -410,6 +419,7 @@ hr {
   color: #fff;
   border: none;
   font-size: 1.1rem;
+  cursor: pointer;
 }
 
 #email-form button:hover {
@@ -720,6 +730,10 @@ footer {
     position: relative;
     left: 0;
     top: 1.5rem;
+  }
+
+  button:hover {
+    cursor: pointer;
   }
 
   #email-form textarea {

@@ -21,6 +21,11 @@ const mobileAbout = document.querySelector('.mobile-about');
 const mobileProjects = document.querySelector('.mobile-projects');
 const mobileContact = document.querySelector('.mobile-contact');
 
+//elements for sending email
+const form = document.getElementById('email-form');
+const success = document.querySelector('.success');
+const fail = document.querySelector('.fail');
+
 //adjust the start locations of each section
 let homeStart, aboutStart, projectStart, contactStart;
 
@@ -56,7 +61,6 @@ window.addEventListener('resize', calcBreakPoints);
 
 //add fade in animation to each section
 window.addEventListener('scroll', () => {
-    console.log(window.innerWidth);
     //change color of hamburger button
     if(window.pageYOffset > aboutStart){
         document.querySelectorAll('.burger-dashes').forEach(el => {
@@ -119,4 +123,31 @@ closeBtn.addEventListener('click', e => {
     e.preventDefault();
     mobileMenu.classList.remove('mobile-open');
     mobileMenu.classList.add('mobile-close');
+});
+
+/*reset all form values on email send*/
+form.addEventListener('submit', async (e) => {   
+    
+    e.preventDefault();
+    
+    //get data from form
+    const data = new FormData(e.target);
+    
+    //send data
+    const res = await fetch(e.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+    
+    if(res.status === 200){
+        success.innerHTML = "Thanks for your submission!";
+        fail.innerHTML = '';
+        form.reset();
+    } else{
+        fail.innerHTML = "Oops! There was a problem submitting your form";
+        success.innerHTML = '';
+    }   
 });
