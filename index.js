@@ -151,3 +151,5 @@ form.addEventListener('submit', async (e) => {
         success.innerHTML = '';
     }   
 });
+
+console.log(window.innerWidth);

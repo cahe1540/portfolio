@@ -1079,7 +1079,7 @@ footer {
   .leetcode,
   .github {
     font-size: 1.5rem;
-    position: relative;
+    top: 5rem;
   }
   /*About*/
   .about {
@@ -1221,7 +1221,8 @@ footer {
   }
   .leetcode,
   .github {
-    font-size: 2.4rem;
+    font-size: 2rem;
+    top: 5rem;
   }
   /*About*/
   .about {
@@ -1265,6 +1266,8 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    position: relative;
+    right: 2.6rem;
   }
   .project-description h3 {
     font-size: 1.3rem;
@@ -1369,6 +1372,7 @@ footer {
   .leetcode,
   .github {
     font-size: 2.4rem;
+    top: 4rem;
   }
   /*About*/
   .about {
@@ -1430,8 +1434,15 @@ footer {
   }
 }
 
+@media only screen and (min-width: 1200px) and (max-width: 1699px){
+  .github,
+  .leetcode {
+    top: 5rem;
+  }
+}
+
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1700px) {
+@media (min-width: 1700px){
   .menu {
     height: 6rem;
   }
